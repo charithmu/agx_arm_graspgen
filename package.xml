@@ -7,7 +7,7 @@
     Grasp candidate generation package for Piper Studio.
     Starts with deterministic heuristics from perception outputs.
   </description>
-  <maintainer email="maintainer@agilexrobotics.com">Agilex Robotics</maintainer>
+  <maintainer email="mung@zhaw.ch">Charith Munasinghe</maintainer>
   <license>Apache-2.0</license>
 
   <buildtool_depend>ament_python</buildtool_depend>

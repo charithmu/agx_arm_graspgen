@@ -1,6 +1,7 @@
 from setuptools import find_packages, setup
 import os
 from glob import glob
+from pathlib import Path
 
 package_name = "agx_arm_graspgen"
 
@@ -16,17 +17,17 @@ setup(
         ("share/" + package_name, ["package.xml"]),
         (
             os.path.join("share", package_name, "config"),
-            glob("config/*"),
+            glob("config/*.yaml"),
         ),
         (
             os.path.join("share", package_name, "launch"),
-            glob("launch/*"),
+            [f for f in glob("launch/*") if Path(f).is_file()],
         ),
     ],
     install_requires=["setuptools"],
     zip_safe=True,
-    maintainer="Agilex Robotics",
-    maintainer_email="maintainer@agilexrobotics.com",
+    maintainer="Charith Munasinghe",
+    maintainer_email="mung@zhaw.ch",
     description="Grasp candidate generation package for Piper Studio.",
     license="Apache-2.0",
 )
